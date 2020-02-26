@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -40,36 +39,6 @@ public final class SeleniumUtil {
 		element.sendKeys(valueToEnter);
 	}
 
-	/**
-	 * Method to get read only valur from application
-	 * 
-	 * @param element is {@link WebElement}
-	 * @return {@link String}
-	 */
-	public static String getROValue(final WebElement element) {
-		return element.getText();
-	}
-
-	/**
-	 * Method to select the data from drop down using visible text
-	 * 
-	 * @param element       is {@link WebElement}
-	 * @param valueToSelect is the value to select in dropdown
-	 */
-	public static void selectDataFromDropdown(final WebElement element, final String valueToSelect) {
-		Select select = new Select(element);
-		select.selectByVisibleText(valueToSelect);
-	}
-	
-	/**
-	 * Method to select checkbox
-	 * @param element is {@link WebElement}
-	 */
-	public static void selectCheckbox(final WebElement element) {
-		if (!element.getAttribute("checked").equalsIgnoreCase("checked")) {
-			element.click();
-		}
-	}
 	
 	/**
 	 * Method to read the json
